@@ -25,4 +25,4 @@ after_success:
   - git config user.name "${GH_USERNAME}"
   - git config user.email "{GH_EMAIL}"
   - git add . ; git commit -m "Deploy to GitHub Pages"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_URL}" master:out-html > /dev/null 2>&1
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_URL}" master:master > /dev/null 2>&1

@@ -21,6 +21,7 @@ v1.1, 2017-04-02
 :chapter-label:
 
 [abstract]
+Install and setup X-Server with a window manager.
 
 toc::[]
 
