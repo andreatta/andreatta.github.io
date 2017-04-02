@@ -1,4 +1,27 @@
+[[install]]
 = Manuals, HowTos and CheatSheets
+Cyril Andreatta <cyril@andreatta.ch>
+v1.0, 2017-04-02
+// Use FontAwesome icons
+:icons: font
+// Source Code highlighter
+:source-highlighter: pygments
+:pygments-style: manni
+:pygments-linenums-mode: inline
+:description:
+:keywords: cheatsheet, manual, how2, howto
+// experimental features for keyboard symbols
+:experimental:
+:sectnums:
+:toc: macro
+:toclevels: 3
+:toc-title: Table of Content
+:sectnum:
+:sectlinks:
+:chapter-label:
+
+[abstract]
+Cheat sheets & Manuals
 
 [TIP]
 ====
