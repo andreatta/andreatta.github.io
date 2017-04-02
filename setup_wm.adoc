@@ -8,8 +8,8 @@ v1.1, 2017-04-02
 :source-highlighter: pygments
 :pygments-style: manni
 :pygments-linenums-mode: inline
-:description: Arch Linux Installation Guide
-:keywords: Arch Linux Installation
+:description: Setup Window Manager
+:keywords: Arch Linux Installation Setup X-Server i3wm XFCE
 // experimental features for keyboard symbols
 :experimental:
 :sectnums:
