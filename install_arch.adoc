@@ -325,12 +325,13 @@ Create a file for each image (Linux system) you want to be able to start.
 ....
 
 This file should contain following lines, while the *PARTUUID* should be adapted to your hardware.
-
-	title       Arch Linux
-	linux       /vmlinuz-linux
-	initrd  	/intel-ucode.img
-	initrd      /initramfs-linux.img
-	options     root=PARTUUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX rw
+....
+title       Arch Linux
+linux       /vmlinuz-linux
+initrd  	/intel-ucode.img
+initrd      /initramfs-linux.img
+options     root=PARTUUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX rw
+....
 
 [TIP]
 .Get PARTUUID from first harddisk sda1
