@@ -5,10 +5,10 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<meta name="description" content="Setup Window Manager">
-<meta name="keywords" content="Arch Linux Installation Setup X-Server i3wm XFCE">
-<meta name="author" content="Cyril Andreatta, Patrick Walther">
-<title>Setup Window Manager</title>
+<meta name="description" content="">
+<meta name="keywords" content="cheatsheet, manual, how2, howto">
+<meta name="author" content="Cyril Andreatta">
+<title>Manuals, HowTos and CheatSheets</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -493,56 +493,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .listingblock .pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 </style>
 </head>
-<body id="setup_wm" class="article">
+<body id="install" class="article">
 <div id="header">
-<h1>Setup Window Manager</h1>
+<h1>Manuals, HowTos and CheatSheets</h1>
 <div class="details">
 <span id="author" class="author">Cyril Andreatta</span><br>
 <span id="email" class="email"><a href="mailto:cyril@andreatta.ch">cyril@andreatta.ch</a></span><br>
-<span id="author2" class="author">Patrick Walther</span><br>
-<span id="revnumber">version 1.1,</span>
+<span id="revnumber">version 1.0,</span>
 <span id="revdate">2017-04-02</span>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
 <div class="quoteblock abstract">
 <blockquote>
-Install and setup X-Server with a window manager.
+Cheat sheets &amp; Manuals
 </blockquote>
 </div>
-<div id="toc" class="toc">
-<div id="toctitle" class="title">Table of Content</div>
-<ul class="sectlevel1">
-<li><a href="#_install_graphic_card_drivers">1. Install Graphic Card Drivers</a></li>
-<li><a href="#_connect_to_internet">2. Connect to Internet</a></li>
-<li><a href="#_install_needed_packages">3. Install needed Packages</a></li>
-<li><a href="#_install_window_manager">4. Install Window Manager</a>
-<ul class="sectlevel2">
-<li><a href="#_i3wm">4.1. i3wm</a></li>
-<li><a href="#_xfce">4.2. XFCE</a></li>
-</ul>
-</li>
-<li><a href="#_start_window_manager_on_login">5. Start Window Manager on Login</a>
-<ul class="sectlevel2">
-<li><a href="#_basic_setup_with_console_login">5.1. Basic setup with console login</a></li>
-</ul>
-</li>
-<li><a href="#_automatically_start_window_manager_on_login">6. Automatically start Window Manager on Login</a>
-<ul class="sectlevel2">
-<li><a href="#_basic_console_login">6.1. Basic Console Login</a></li>
-<li><a href="#_start_gui_with_display_manager">6.2. Start GUI with Display Manager</a></li>
-</ul>
-</li>
-<li><a href="#_set_font_used_for_vconsole_boot_up">7. Set font used for vconsole (boot-up)</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_install_graphic_card_drivers"><a class="link" href="#_install_graphic_card_drivers">1. Install Graphic Card Drivers</a></h2>
-<div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -550,200 +516,17 @@ Install and setup X-Server with a window manager.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Get name of your graphics card.</div>
 <div class="paragraph">
-<p>lspci | grep VGA</p>
+<p>Cheat sheets &amp; Manuals</p>
 </div>
 </td>
 </tr>
 </table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Get resolution from your used monitor.</div>
-<div class="paragraph">
-<p>xdpyinfo | grep -B2 resolution</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_connect_to_internet"><a class="link" href="#_connect_to_internet">2. Connect to Internet</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-terminal"></i></span>
-Setup WiFi connection and check if google DNS server is accessible</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>ip a
-sudo ip link set wlp2s0 up
-wifi-menu
-ping 8.8.8.8</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_install_needed_packages"><a class="link" href="#_install_needed_packages">3. Install needed Packages</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-terminal"></i></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo pacman -S xorg-server xorg-xinit xorg-server-utils mesa lib32-mesa xf86-video-intel xf86-input-synaptics</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_install_window_manager"><a class="link" href="#_install_window_manager">4. Install Window Manager</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Install your preferred window manager.</p>
-</div>
-<div class="sect2">
-<h3 id="_i3wm"><a class="link" href="#_i3wm">4.1. i3wm</a></h3>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-terminal"></i></span>
-A great tiling window manager is <a href="https://wiki.archlinux.org/index.php/I3">i3</a>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo pacman -S i3</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_xfce"><a class="link" href="#_xfce">4.2. XFCE</a></h3>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-terminal"></i></span>
-Alternatively you could install <a href="https://wiki.archlinux.org/index.php/Xfce">XFCE</a>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo pacman -S xfce4{,-goodies}</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_start_window_manager_on_login"><a class="link" href="#_start_window_manager_on_login">5. Start Window Manager on Login</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_basic_setup_with_console_login"><a class="link" href="#_basic_setup_with_console_login">5.1. Basic setup with console login</a></h3>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-file-text-o"></i></span>
-Copy the template to your locale folder and change the exec line as follows.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cp /etc/X11/xinit/xinitrc ~/.xinitrc</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>exec i3</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>exec startxfce4</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_automatically_start_window_manager_on_login"><a class="link" href="#_automatically_start_window_manager_on_login">6. Automatically start Window Manager on Login</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_basic_console_login"><a class="link" href="#_basic_console_login">6.1. Basic Console Login</a></h3>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-file-text-o"></i></span> Add following lines to your <code>~/.bash_profile</code> or <code>~/.zsh_profile</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span class="tok-k">if</span> <span class="tok-o">[</span> -z <span class="tok-s2">&quot;</span><span class="tok-nv">$DISPLAY</span><span class="tok-s2">&quot;</span> <span class="tok-o">]</span> <span class="tok-o">&amp;&amp;</span> <span class="tok-o">[</span> -n <span class="tok-s2">&quot;</span><span class="tok-nv">$XDG_VTNR</span><span class="tok-s2">&quot;</span> <span class="tok-o">]</span> <span class="tok-o">&amp;&amp;</span> <span class="tok-o">[</span> <span class="tok-s2">&quot;</span><span class="tok-nv">$XDG_VTNR</span><span class="tok-s2">&quot;</span> -eq <span class="tok-m">1</span> <span class="tok-o">]</span><span class="tok-p">;</span> <span class="tok-k">then</span>
-	<span class="tok-nb">exec</span> startx
-<span class="tok-k">fi</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_start_gui_with_display_manager"><a class="link" href="#_start_gui_with_display_manager">6.2. Start GUI with Display Manager</a></h3>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-terminal"></i></span>
-If you prefer a graphical login screen, you need a <a href="https://wiki.archlinux.org/index.php/Display_manager">display manager</a>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo pacman -S ligthdm{,-gtk-greeter,-gtk-greeter-settings}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-terminal"></i></span>
-Enable display manager on startup.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo systemctl enable lightdm.service</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_set_font_used_for_vconsole_boot_up"><a class="link" href="#_set_font_used_for_vconsole_boot_up">7. Set font used for vconsole (boot-up)</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-file-text-o"></i></span>
-Change font used as boot-up font in vconsle.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>/etc/vconsole.conf</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>FONT=ter-powerline-v20b</pre>
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Get available fonts for console</div>
-<div class="paragraph">
-<p>ls -l /etc/share/kbd/consolefonts</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.1<br>
+Version 1.0<br>
 Last updated 2017-04-03 13:11:02 CEST
 </div>
 </div>
